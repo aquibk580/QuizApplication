@@ -1,0 +1,519 @@
+{
+  "csharp": {
+    "sections": [
+      {
+        "title": "Introduction to C#",
+        "content": "C# (pronounced 'C-sharp') is a modern, object-oriented, and type-safe programming language developed by Microsoft as part of its .NET initiative. It was designed by Anders Hejlsberg and first released in 2002. C# is widely used for developing a range of applications, including web, desktop, and mobile applications. It is statically typed, meaning type checking is performed at compile-time. C# is syntactically similar to Java, C++, and other languages in the C family."
+      },
+      {
+        "title": "Structure of a C# Program",
+        "content": "A typical C# program consists of the following parts:\n- Namespace Declaration: Defines a named scope for classes and other code elements.\n- Class Declaration: Defines the blueprint of an object with members like methods and properties.\n- Main Method: The entry point for program execution, defined as `static void Main()`.\n- Statements and Expressions: Perform operations and computations.\n\nExample:\ncsharp\nusing System;\n\nnamespace HelloWorld {\n&nbsp;&nbsp;&nbsp;&nbsp;class Program {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static void Main(string[] args) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"Hello, World!\");\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n"
+      },
+      {
+        "title": "Data Types in C#",
+        "content": "C# offers a wide variety of data types, categorized into Value Types and Reference Types:\n\n- Value Types: Store data directly.\n&nbsp;&nbsp;- `int`: Represents integers.\n&nbsp;&nbsp;- `float`: Represents floating-point numbers.\n&nbsp;&nbsp;- `bool`: Represents Boolean values (`true` or `false`).\n&nbsp;&nbsp;- `char`: Represents a single character.\n&nbsp;&nbsp;- `struct`: A value type that groups related variables.\n\n- Reference Types: Store a reference to the memory location where data is stored.\n&nbsp;&nbsp;- `string`: Represents a sequence of characters.\n&nbsp;&nbsp;- `object`: The base type from which all other types are derived.\n&nbsp;&nbsp;- `class`: Represents an object with fields and methods.\n\nExample:\ncsharp\nint age = 25;\nfloat pi = 3.14f;\nbool isActive = true;\nchar initial = 'A';\nstring name = \"John\";\n"
+      },
+      {
+        "title": "Variables and Constants",
+        "content": "Variables store data that can change during program execution. They are declared using a specific data type. Variables must be initialized before use.\n\nExample:\ncsharp\nint age = 30;\nfloat temperature = 98.6f;\n\n\nConstants are fixed values that cannot be modified after their initial assignment. Constants are defined using the `const` keyword in C#.\n\nExample:\ncsharp\nconst float Pi = 3.14159f;\n"
+      },
+      {
+        "title": "Operators in C#",
+        "content": "C# supports a variety of operators that allow you to perform calculations and logic on variables and values. These include:\n\n- Arithmetic Operators: `+`, `-`, `*`, `/`, `%` (for basic mathematical operations).\n- Relational Operators: `==`, `!=`, `<`, `>`, `<=`, `>=` (for comparisons).\n- Logical Operators: `&&`, `||`, `!` (AND, OR, and NOT).\n- Bitwise Operators: `&`, `|`, `^`, `~` (for bit-level operations).\n- Assignment Operators: `=`, `+=`, `-=`, `*=`, `/=` (for assigning and updating values).\n- Increment/Decrement Operators: `++`, `--` (for increasing or decreasing values by 1).\n\nExample:\ncsharp\nint a = 5;\nint b = 3;\nint sum = a + b;  // sum = 8\n"
+      },
+      {
+        "title": "Control Structures",
+        "content": "Control structures in C# allow you to manage the flow of the program by making decisions and performing loops:\n\n- if-else: Executes code based on a condition.\ncsharp\nif (age >= 18) {\n&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"You are an adult.\");\n} else {\n&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"You are a minor.\");\n}\n\n\n- switch-case: Evaluates an expression and matches it with a case value.\ncsharp\nswitch (grade) {\n&nbsp;&nbsp;&nbsp;&nbsp;case 'A':\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"Excellent\");\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;\n&nbsp;&nbsp;&nbsp;&nbsp;case 'B':\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"Good\");\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;\n&nbsp;&nbsp;&nbsp;&nbsp;default:\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"Invalid grade\");\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;\n}\n\n\n- Loops: Repeatedly execute a block of code.\n&nbsp;&nbsp;- `for` loop:\n&nbsp;&nbsp;csharp\n&nbsp;&nbsp;for (int i = 0; i < 5; i++) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(i);\n&nbsp;&nbsp;}\n&nbsp;&nbsp;\n&nbsp;&nbsp;- `while` loop:\n&nbsp;&nbsp;csharp\n&nbsp;&nbsp;while (i < 5) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(i);\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;\n&nbsp;&nbsp;}\n&nbsp;&nbsp;\n&nbsp;&nbsp;- `do-while` loop (executes at least once):\n&nbsp;&nbsp;csharp\n&nbsp;&nbsp;do {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(i);\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;\n&nbsp;&nbsp;} while (i < 5);\n&nbsp;&nbsp;"
+      },
+      {
+        "title": "Object-Oriented Programming in C#",
+        "content": "C# is an object-oriented programming (OOP) language, and its core concepts include:\n\n- Classes: Define a blueprint for objects.\n- Objects: Instances of classes that hold data (fields) and behavior (methods).\n- Encapsulation: Restrict access to some components of an object using access modifiers (e.g., `private`, `public`).\n- Inheritance: Allow a class to inherit members of another class, promoting code reuse.\n- Polymorphism: The ability of different objects to respond to the same method call in different ways.\n- Abstraction: Hide complex details and expose only essential features through abstract classes or interfaces.\n\nExample:\ncsharp\npublic class Animal {\n&nbsp;&nbsp;&nbsp;&nbsp;public void Speak() {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"The animal makes a sound.\");\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n\npublic class Dog : Animal {\n&nbsp;&nbsp;&nbsp;&nbsp;public void Speak() {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"The dog barks.\");\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n"
+      },
+      {
+        "title": "Methods in C#",
+        "content": "Methods are functions defined within a class that perform a specific task.\n\nSyntax:\ncsharp\nreturn_type MethodName(parameters) {\n&nbsp;&nbsp;&nbsp;&nbsp;// Method body\n&nbsp;&nbsp;&nbsp;&nbsp;return value;\n}\n\n\nExample:\ncsharp\npublic int AddNumbers(int a, int b) {\n&nbsp;&nbsp;&nbsp;&nbsp;return a + b;\n}\n\n\nMethods can also be overloaded by defining multiple methods with the same name but different parameters."
+      },
+      {
+        "title": "Properties in C#",
+        "content": "Properties provide a way to read, write, or compute the value of a private field. They are a key part of C#'s encapsulation mechanism.\n\nSyntax:\ncsharp\npublic data_type PropertyName { get; set; }\n\n\nExample:\ncsharp\nprivate int _age;\npublic int Age {\n&nbsp;&nbsp;&nbsp;&nbsp;get { return _age; }\n&nbsp;&nbsp;&nbsp;&nbsp;set { _age = value; }\n}\n"
+      },
+      {
+        "title": "Exception Handling",
+        "content": "C# provides a robust mechanism for handling exceptions using `try`, `catch`, and `finally` blocks.\n\n- try: The block of code that may cause an exception.\n- catch: The block of code that handles the exception.\n- finally: Code that runs regardless of whether an exception occurred or not.\n\nExample:\ncsharp\ntry {\n&nbsp;&nbsp;&nbsp;&nbsp;int result = 10 / 0;\n} catch (DivideByZeroException ex) {\n&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"Error: \" + ex.Message);\n} finally {\n&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(\"This code runs no matter what.\");\n}\n"
+      },
+      {
+        "title": "Collections in C#",
+        "content": "C# provides several collection types to store and manipulate groups of objects:\n\n- Arrays: Fixed-size collection of elements of the same type.\n&nbsp;&nbsp;csharp\n&nbsp;&nbsp;int[] numbers = { 1, 2, 3, 4, 5 };\n&nbsp;&nbsp;\n\n- Lists: A dynamic collection that can grow and shrink.\n&nbsp;&nbsp;csharp\n&nbsp;&nbsp;List<int> list = new List<int> { 1, 2, 3 };\n&nbsp;&nbsp;list.Add(4);\n&nbsp;&nbsp;\n\n- Dictionaries: Store key-value pairs for fast lookups.\n&nbsp;&nbsp;csharp\n&nbsp;&nbsp;Dictionary<string, int> ages = new Dictionary<string, int> {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ \"John\", 25 },\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ \"Sarah\", 30 }\n&nbsp;&nbsp;};\n&nbsp;&nbsp;"
+      },
+      {
+        "title": "Delegates and Events",
+        "content": "A delegate is a type that references a method, and it is used to pass methods as arguments.\n\nExample:\ncsharp\npublic delegate void MyDelegate(string message);\n\npublic void ShowMessage(string message) {\n&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(message);\n}\n\nMyDelegate del = new MyDelegate(ShowMessage);\ndel(\"Hello, C#!\");\n\n\nEvents provide a way for a class to notify other classes or objects when something of interest occurs. Events are based on delegates.\n\nExample:\ncsharp\npublic event EventHandler MyEvent;\n\nprotected virtual void OnMyEvent(EventArgs e) {\n&nbsp;&nbsp;&nbsp;&nbsp;if (MyEvent != null)\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MyEvent(this, e);\n}\n"
+      }
+    ]
+  },
+  "java": {
+    "sections": [
+      {
+        "title": "Introduction to Java",
+        "content": "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It was originally developed by James Gosling at Sun Microsystems and released in 1995 as a core component of Sun's Java platform. Java is platform-independent, meaning that compiled Java code can run on all platforms that support Java without the need for recompilation."
+      },
+      {
+        "title": "Structure of a Java Program",
+        "content": "A Java program typically includes the following key components:\n- Package Declaration: A way to organize Java classes into namespaces.\n- Class Declaration: The main building block in Java which contains methods and variables.\n- Main Method: The entry point of any Java application, represented as `public static void main(String[] args)`.\n\nExample:\njava\npublic class HelloWorld {\n&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Hello, World!\");\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n"
+      },
+      {
+        "title": "Data Types in Java",
+        "content": "Java provides a rich set of data types, categorized into Primitive Types and Reference Types:\n\n- Primitive Types: Include `int`, `float`, `double`, `boolean`, `char`, `byte`, `short`, and `long`. These are predefined by the language and named by a keyword.\n- Reference Types: Include objects, arrays, and interfaces. These types store references to the actual data.\n\nExample:\njava\nint age = 30;\nfloat salary = 50000.5f;\nboolean isJavaFun = true;\nchar grade = 'A';\n"
+      },
+      {
+        "title": "Variables and Constants",
+        "content": "Variables are containers for storing data values. In Java, variables must be declared before they are used.\n\nSyntax:\njava\nint age = 25;\nfloat pi = 3.14f;\n\n\nConstants: In Java, constants are declared using the `final` keyword. Once a constant is assigned, its value cannot be changed.\n\nExample:\njava\nfinal int MAX_VALUE = 100;\n"
+      },
+      {
+        "title": "Operators in Java",
+        "content": "Java supports a wide variety of operators:\n\n- Arithmetic Operators: `+`, `-`, `*`, `/`, `%` (for addition, subtraction, multiplication, division, and modulus).\n- Relational Operators: `==`, `!=`, `>`, `<`, `>=`, `<=` (for comparison).\n- Logical Operators: `&&`, `||`, `!` (AND, OR, NOT).\n- Bitwise Operators: `&`, `|`, `^`, `~` (for manipulating individual bits).\n- Assignment Operators: `=`, `+=`, `-=`, `*=`, `/=` (for assigning and updating values).\n\nExample:\njava\nint a = 5;\nint b = 3;\nint result = a + b; // result = 8\n"
+      },
+      {
+        "title": "Control Structures",
+        "content": "Control structures allow Java programs to make decisions and repeat certain blocks of code:\n\n- if-else: Executes a block of code based on a condition.\njava\nif (age >= 18) {\n&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"You are an adult.\");\n} else {\n&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"You are not an  adult.\");\n}\n\n\n- switch-case: Allows selection among multiple options based on an expression.\njava\nswitch (grade) {\n&nbsp;&nbsp;&nbsp;&nbsp;case 'A':\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Excellent\");\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;\n&nbsp;&nbsp;&nbsp;&nbsp;case 'B':\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Good\");\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;\n&nbsp;&nbsp;&nbsp;&nbsp;default:\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Invalid grade\");\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;\n}\n\n\n- Loops: Java supports various looping mechanisms like `for`, `while`, and `do-while`.\n&nbsp;&nbsp;- `for` loop:\n&nbsp;&nbsp;java\n&nbsp;&nbsp;for (int i = 0; i < 5; i++) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);\n&nbsp;&nbsp;}\n&nbsp;&nbsp;\n&nbsp;&nbsp;- `while` loop:\n&nbsp;&nbsp;java\n&nbsp;&nbsp;int i = 0;\n&nbsp;&nbsp;while (i < 5) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;\n&nbsp;&nbsp;}\n&nbsp;&nbsp;\n&nbsp;&nbsp;- `do-while` loop (executes at least once):\n&nbsp;&nbsp;java\n&nbsp;&nbsp;int i = 0;\n&nbsp;&nbsp;do {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(i);\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;\n&nbsp;&nbsp;} while (i < 5);\n&nbsp;&nbsp;"
+      },
+      {
+        "title": "Object-Oriented Programming (OOP) in Java",
+        "content": "Java is a fully object-oriented language. The key concepts of OOP in Java include:\n\n- Classes: Define the blueprint for an object.\n- Objects: Instances of classes that have states (attributes) and behaviors (methods).\n- Encapsulation: Wrapping data and code into a single unit, ensuring controlled access through access modifiers like `private`, `protected`, and `public`.\n- Inheritance: A mechanism where one class can inherit properties and behaviors from another class using the `extends` keyword.\n- Polymorphism: The ability to use a single interface to represent different types of objects. It comes in two forms: compile-time (method overloading) and runtime (method overriding).\n- Abstraction: Hides implementation details and exposes only the essential functionalities using abstract classes and interfaces.\n\nExample:\njava\nclass Animal {\n&nbsp;&nbsp;&nbsp;&nbsp;void sound() {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Animal makes a sound\");\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n\nclass Dog extends Animal {\n&nbsp;&nbsp;&nbsp;&nbsp;void sound() {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Dog barks\");\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n\npublic class Main {\n&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Animal myDog = new Dog();\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myDog.sound();   // Output: Dog barks\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n"
+      },
+      {
+        "title": "Methods in Java",
+        "content": "A method in Java is a block of code that performs a specific task. Methods promote code reusability.\n\nSyntax:\njava\nreturn_type methodName(parameters) {\n&nbsp;&nbsp;&nbsp;&nbsp;// method body\n&nbsp;&nbsp;&nbsp;&nbsp;return value;\n}\n\n\nExample:\njava\npublic int addNumbers(int a, int b) {\n&nbsp;&nbsp;&nbsp;&nbsp;return a + b;\n}\n"
+      },
+      {
+        "title": "Constructors",
+        "content": "A constructor in Java is a special type of method that is invoked when an object is instantiated. It is used to initialize the object's state.\n\n- Constructors have the same name as the class.\n- They do not have a return type (not even `void`).\n- Java provides a default constructor if no constructor is defined.\n\nExample:\njava\nclass Person {\n&nbsp;&nbsp;&nbsp;&nbsp;String name;\n\n&nbsp;&nbsp;&nbsp;&nbsp;// Constructor\n&nbsp;&nbsp;&nbsp;&nbsp;public Person(String name) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n\npublic class Main {\n&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person p = new Person(\"John\");\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(p.name);  // Output: John\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n"
+      },
+      {
+        "title": "Exception Handling in Java",
+        "content": "Java provides a robust mechanism for handling runtime errors through exceptions. Exception handling ensures that the normal flow of the application is maintained.\n\nThe basic structure includes:\n- try: Block of code that may generate an exception.\n- catch: Block that catches and handles the exception.\n- finally: Block that is executed regardless of whether an exception occurred.\n\nExample:\njava\ntry {\n&nbsp;&nbsp;&nbsp;&nbsp;int result = 10 / 0;  // This will throw an exception\n} catch (ArithmeticException e) {\n&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"Cannot divide by zero\");\n} finally {\n&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(\"This will always execute\");\n}\n"
+      },
+      {
+        "title": "Collections Framework",
+        "content": "The Java Collections Framework provides a set of classes and interfaces for managing groups of objects. It includes:\n\n- List: An ordered collection (e.g., `ArrayList`, `LinkedList`).\n&nbsp;&nbsp;java\n&nbsp;&nbsp;List<String> list = new ArrayList<>();\n&nbsp;&nbsp;list.add(\"Java\");\n&nbsp;&nbsp;list.add(\"Python\");\n&nbsp;&nbsp;\n\n- Set: A collection that contains no duplicate elements (e.g., `HashSet`, `TreeSet`).\n&nbsp;&nbsp;java\n&nbsp;&nbsp;Set<String> set = new HashSet<>();\n&nbsp;&nbsp;set.add(\"Java\");\n&nbsp;&nbsp;set.add(\"Java\");  // Duplicate won't be added\n&nbsp;&nbsp;\n\n- Map: A collection of key-value pairs (e.g., `HashMap`, `TreeMap`).\n&nbsp;&nbsp;java\n&nbsp;&nbsp;Map<String, Integer> map = new HashMap<>();\n&nbsp;&nbsp;map.put(\"John\", 25);\n&nbsp;&nbsp;map.put(\"Jane\", 30);\n&nbsp;&nbsp;"
+      }
+    ]
+  },
+
+  "cpp": {
+    "sections": [
+      {
+        "title": "History and Features",
+        "content": "C++ was developed by Bjarne Stroustrup at Bell Labs in the late 1970s as an enhancement to the C programming language.\nIts main features include:\n- Object-oriented programming (OOP)\n- Generic programming\n- Low-level memory manipulation\n- Compatibility with C\n- Standard Template Library (STL)"
+      },
+      {
+        "title": "Setting Up the Development Environment",
+        "content": "To start programming in C++, you need:\n- A text editor or an Integrated Development Environment (IDE) such as Visual Studio, Code::Blocks, or CLion.\n- A C++ compiler like GCC, Clang, or MSVC.\n- Proper configuration of the environment variables, if necessary."
+      },
+      {
+        "title": "Basic Syntax",
+        "content": "- Every C++ program starts with a `main` function.\n- Statements end with a semicolon (`;`).\n- C++ is case-sensitive."
+      },
+      {
+        "title": "Data Types",
+        "content": "Basic Data Types:\n- int: Integer type (e.g., `int age = 25;`).\n- float: Floating-point type (e.g., `float pi = 3.14;`).\n- double: Double-precision floating-point type.\n- char: Character type (e.g., `char letter = 'A';`).\n- bool: Boolean type (true or false)."
+      },
+      {
+        "title": "Variables and Constants",
+        "content": "- Variables are declared using data types and can be modified.\n- Constants are declared using the `const` keyword and cannot be modified after initialization."
+      },
+      {
+        "title": "Operators",
+        "content": "Arithmetic Operators:\n- Used for performing mathematical calculations.\n- Examples: `+`, `-`, `*`, `/`, `%`.\n\nRelational Operators:\n- Used for comparing values.\n- Examples: `==`, `!=`, `>`, `<`, `>=`, `<=`.\n\nLogical Operators:\n- Used to combine or modify boolean expressions.\n- Examples: `&&`, `||`, `!`.\n\nBitwise Operators:\n- Used for manipulating bits.\n- Examples: `&`, `|`, `^`, `~`, `<<`, `>>`."
+      },
+      {
+        "title": "Control Structures",
+        "content": "Conditional Statements:\n- if statement: Executes code if the condition is true.\n- else statement: Executes code if the condition is false.\n- switch statement: Selects one of many code blocks to execute.\n\nLoops:\n- for loop: Used for iterating over a range of values.\n- while loop: Continues executing as long as the condition is true.\n- do-while loop: Executes code at least once before checking the condition."
+      },
+      {
+        "title": "Functions",
+        "content": "Function Declaration and Definition:\n- Functions are defined with a return type, name, and parameters.\n- Example:\n&nbsp;&nbsp;cpp\n&nbsp;&nbsp;int add(int a, int b) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a + b;\n&nbsp;&nbsp;}\n&nbsp;&nbsp;\n\nFunction Parameters and Return Values:\n- Parameters are specified in the function declaration.\n- The return type indicates what type of value the function will return.\n\nFunction Overloading:\n- Multiple functions can have the same name with different parameters.\n\nInline Functions:\n- Inline functions are defined with the `inline` keyword to suggest to the compiler to insert the function's body at the point of call to reduce function call overhead."
+      },
+      {
+        "title": "Arrays and Strings",
+        "content": "Declaring and Initializing Arrays:\n- Arrays are a collection of items of the same type.\n- Example: `int numbers[5] = {1, 2, 3, 4, 5};`\n\nMultidimensional Arrays:\n- Arrays that contain arrays. Example: `int matrix[3][3];`\n\nC-style Strings vs. C++ Strings:\n- C-style strings: Null-terminated character arrays.\n- C++ strings: Use the `std::string` class for more functionality."
+      },
+      {
+        "title": "Intermediate Topics",
+        "content": "Pointers and References:\n\nPointer Basics and Syntax:\n- Pointers store memory addresses. Example: `int* ptr;`\n\nPointer Arithmetic:\n- You can perform arithmetic operations on pointers.\n\nReferences vs. Pointers:\n- References are an alias for a variable, while pointers store memory addresses."
+      },
+      {
+        "title": "Dynamic Memory Management",
+        "content": "New and Delete Operators:\n- `new` is used to allocate memory, and `delete` is used to deallocate it.\n\nMemory Leaks and Smart Pointers:\n- Memory leaks occur when memory is allocated but not freed.\n- Smart pointers (`std::unique_ptr`, `std::shared_ptr`) help manage memory automatically."
+      },
+      {
+        "title": "Structures and Enums",
+        "content": "Defining and Using Structures:\n- Structures are user-defined data types. Example:\n&nbsp;&nbsp;cpp\n&nbsp;&nbsp;struct Person {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string name;\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int age;\n&nbsp;&nbsp;};\n&nbsp;&nbsp;\n\nEnumerated Types:\n- Enumerations define a variable that can hold a set of predefined constants. Example:\n&nbsp;&nbsp;cpp\n&nbsp;&nbsp;enum Day {Sun, Mon, Tue, Wed, Thu, Fri, Sat};\n&nbsp;&nbsp;"
+      },
+      {
+        "title": "File Handling",
+        "content": "Reading from and Writing to Files:\n- Use `ifstream` for input and `ofstream` for output.\n\nFile Streams:\n- Stream classes in C++ for handling file operations."
+      },
+      {
+        "title": "Classes and Objects",
+        "content": "Class Declaration and Definition:\n- Classes encapsulate data and functions. Example:\n&nbsp;&nbsp;cpp\n&nbsp;&nbsp;class Car {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public:\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void drive();\n&nbsp;&nbsp;};\n&nbsp;&nbsp;\n\nConstructors and Destructors:\n- Constructors initialize objects, while destructors clean up when an object goes out of scope.\n\nMember Functions and Access Specifiers:\n- Member functions are defined within classes. Access specifiers control visibility: `public`, `protected`, and `private`.\n\nStatic Members:\n- Static members belong to the class rather than any instance."
+      },
+      {
+        "title": "Advanced Topics",
+        "content": "Inheritance:\n\nSingle and Multiple Inheritance:\n- Single inheritance involves one base class; multiple inheritance involves more than one.\n\nBase and Derived Classes:\n- Derived classes inherit properties and methods from base classes.\n\nAccess Specifiers in Inheritance:\n- Control the accessibility of base class members in derived classes.\n\nPolymorphism:\n\nFunction Overriding:\n- Derived classes can provide specific implementations of base class functions.\n\nVirtual Functions and Pure Virtual Functions:\n- Virtual functions enable dynamic binding; pure virtual functions make a class abstract.\n\nAbstract Classes:\n- Classes with at least one pure virtual function."
+      },
+      {
+        "title": "Templates",
+        "content": "Function Templates:\n- Allow functions to operate with generic types.\n\nClass Templates:\n- Define a class that can operate with any data type.\n\nTemplate Specialization:\n- Customizes the behavior of templates for specific types."
+      },
+      {
+        "title": "Standard Template Library (STL)",
+        "content": "Containers:\n- Sequence containers (e.g., `vector`, `list`) and associative containers (e.g., `map`, `set`).\n\nIterators:\n- Objects that allow traversal of container elements.\n\nAlgorithms:\n- Predefined functions for common tasks (e.g., `sort`, `search`)."
+      },
+      {
+        "title": "Exception Handling",
+        "content": "Try, Catch, and Throw:\n- Mechanism for handling runtime errors.\n\nCustom Exceptions:\n- Define your own exception classes.\n\nException Handling Best Practices:\n- Guidelines for effective use of exceptions."
+      },
+      {
+        "title": "Multithreading",
+        "content": "Creating and Managing Threads:\n- Use `std::thread` for creating threads.\n\nSynchronization Mechanisms:\n- Mutexes, locks, and condition variables for thread synchronization.\n\nConcurrency and Parallelism:\n- Concepts for executing multiple tasks simultaneously."
+      },
+      {
+        "title": "Modern C++ Features",
+        "content": "C++11 and Beyond:\n- Auto keyword, lambda expressions, move semantics, and more.\n\nSmart Pointers:\n- `std::unique_ptr`, `std::shared_ptr`, and `std::weak_ptr`.\n\nRvalue References and Move Semantics:\n- Optimize resource management and improve performance."
+      }
+    ]
+  },
+  "javascript": {
+    "sections": [
+      {
+        "title": "Introduction to JavaScript",
+        "content": "JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It was originally developed by Brendan Eich of Netscape Communications Corporation in 1995. JavaScript is primarily known as the scripting language for Web pages, but it's also used in many non-browser environments."
+      },
+      {
+        "title": "Basic Syntax",
+        "content": "- JavaScript is case-sensitive and uses the Unicode character set.\n- Statements in JavaScript are separated by semicolons (;).\n- Comments can be single-line (//) or multi-line (/* */).\n- Variables are declared using var, let, or const.\n\nExample:\njavascript\n// This is a single-line comment\n\n/* This is a\n&nbsp;&nbsp;&nbsp;multi-line comment */\n\nlet greeting = 'Hello, World!';\nconsole.log(greeting);  // Outputs: Hello, World!\n"
+      },
+      {
+        "title": "Data Types",
+        "content": "JavaScript has several built-in data types:\n\n1. Number: Represents both integer and floating-point numbers.\n&nbsp;&nbsp;Example: let age = 25; let pi = 3.14;\n\n2. String: Represents textual data.\n&nbsp;&nbsp;Example: let name = 'John';\n\n3. Boolean: Represents a logical entity with two values: true or false.\n&nbsp;&nbsp;Example: let isStudent = true;\n\n4. Undefined: Represents a variable that has been declared but not assigned a value.\n&nbsp;&nbsp;Example: let car;\n\n5. Null: Represents a deliberate non-value or absence of any object value.\n&nbsp;&nbsp;Example: let empty = null;\n\n6. Object: Represents a collection of related data.\n&nbsp;&nbsp;Example: let person = {name: 'John', age: 30};\n\n7. Symbol (added in ES6): Represents a unique identifier.\n&nbsp;&nbsp;Example: let sym = Symbol('description');\n"
+      },
+      {
+        "title": "Variables",
+        "content": "Variables in JavaScript can be declared using three keywords:\n\n1. var: Function-scoped or globally-scoped. Can be redeclared and updated.\n&nbsp;&nbsp;Example: var x = 5;\n\n2. let (introduced in ES6): Block-scoped. Can be updated but not redeclared.\n&nbsp;&nbsp;Example: let y = 10;\n\n3. const (introduced in ES6): Block-scoped. Cannot be updated or redeclared.\n&nbsp;&nbsp;Example: const PI = 3.14;\n\nVariable naming rules:\n- Must start with a letter, underscore (_), or dollar sign ($).\n- Can contain letters, digits, underscores, and dollar signs.\n- Are case-sensitive.\n- Cannot use reserved keywords.\n"
+      },
+      {
+        "title": "Operators",
+        "content": "JavaScript supports various types of operators:\n\n1. Arithmetic Operators: +, -, *, /, %, ** (exponentiation)\n&nbsp;&nbsp;Example: let sum = 5 + 3;  // 8\n\n2. Assignment Operators: =, +=, -=, *=, /=, %=\n&nbsp;&nbsp;Example: let x = 10; x += 5;  // x is now 15\n\n3. Comparison Operators: ==, ===, !=, !==, >, <, >=, <=\n&nbsp;&nbsp;Example: console.log(5 === '5');  // false (strict equality)\n\n4. Logical Operators: &&, ||, !\n&nbsp;&nbsp;Example: console.log(true && false);  // false\n\n5. Bitwise Operators: &, |, ^, ~, <<, >>, >>>\n&nbsp;&nbsp;Example: console.log(5 & 1);  // 1\n\n6. Ternary Operator: condition ? expr1 : expr2\n&nbsp;&nbsp;Example: let result = (age >= 18) ? 'Adult' : 'Minor';\n"
+      },
+      {
+        "title": "Control Structures",
+        "content": "JavaScript provides several control structures for decision-making and looping:\n\n1. if...else statement:\njavascript\nif (condition) {\n&nbsp;&nbsp;&nbsp;&nbsp;// code to be executed if condition is true\n} else {\n&nbsp;&nbsp;&nbsp;&nbsp;// code to be executed if condition is false\n}\n\n2. switch statement:\njavascript\nswitch(expression) {\n&nbsp;&nbsp;&nbsp;&nbsp;case x:\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// code block\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;\n&nbsp;&nbsp;&nbsp;&nbsp;case y:\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// code block\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;\n&nbsp;&nbsp;&nbsp;&nbsp;default:\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// code block\n}\n\n3. for loop:\njavascript\nfor (let i = 0; i < 5; i++) {\n&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);\n}\n\n4. while loop:\njavascript\nlet i = 0;\nwhile (i < 5) {\n&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);\n&nbsp;&nbsp;&nbsp;&nbsp;i++;\n}\n\n5. do...while loop:\njavascript\nlet i = 0;\ndo {\n&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);\n&nbsp;&nbsp;&nbsp;&nbsp;i++;\n} while (i < 5);\n"
+      },
+      {
+        "title": "Functions",
+        "content": "Functions in JavaScript are blocks of reusable code:\n\n1. Function Declaration:\njavascript\nfunction greet(name) {\n&nbsp;&nbsp;&nbsp;&nbsp;return `Hello, ${name}!`;\n}\nconsole.log(greet('John'));  // Outputs: Hello, John!\n\n2. Function Expression:\njavascript\nlet greet = function(name) {\n&nbsp;&nbsp;&nbsp;&nbsp;return `Hello, ${name}!`;\n};\nconsole.log(greet('John'));  // Outputs: Hello, John!\n\n3. Arrow Functions (introduced in ES6):\njavascript\nlet greet = (name) => `Hello, ${name}!`;\nconsole.log(greet('John'));  // Outputs: Hello, John!\n\n4. Default Parameters (ES6):\njavascript\nfunction greet(name = 'Guest') {\n&nbsp;&nbsp;&nbsp;&nbsp;return `Hello, ${name}!`;\n}\nconsole.log(greet());  // Outputs: Hello, Guest!\n"
+      },
+      {
+        "title": "Objects",
+        "content": "Objects in JavaScript are collections of key-value pairs:\n\n1. Object Literal:\njavascript\nlet person = {\n&nbsp;&nbsp;&nbsp;&nbsp;name: 'John',\n&nbsp;&nbsp;&nbsp;&nbsp;age: 30,\n&nbsp;&nbsp;&nbsp;&nbsp;greet: function() {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, my name is ${this.name}`);\n&nbsp;&nbsp;&nbsp;&nbsp;}\n};\nperson.greet();  // Outputs: Hello, my name is John\n\n2. Constructor Function:\njavascript\nfunction Person(name, age) {\n&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;\n&nbsp;&nbsp;&nbsp;&nbsp;this.age = age;\n}\nlet john = new Person('John', 30);\nconsole.log(john.name);  // Outputs: John\n\n3. Object.create():\njavascript\nlet personProto = {\n&nbsp;&nbsp;&nbsp;&nbsp;greet: function() {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, my name is ${this.name}`);\n&nbsp;&nbsp;&nbsp;&nbsp;}\n};\nlet john = Object.create(personProto);\njohn.name = 'John';\njohn.greet();  // Outputs: Hello, my name is John\n"
+      },
+      {
+        "title": "Arrays",
+        "content": "Arrays in JavaScript are used to store multiple values in a single variable:\n\n1. Creating an Array:\njavascript\nlet fruits = ['Apple', 'Banana', 'Orange'];\n\n2. Accessing Array Elements:\njavascript\nconsole.log(fruits[0]);  // Outputs: Apple\n\n3. Array Methods:\n- push(): Adds one or more elements to the end of an array.\n- pop(): Removes the last element from an array.\n- shift(): Removes the first element from an array.\n- unshift(): Adds one or more elements to the beginning of an array.\n- slice(): Returns a shallow copy of a portion of an array.\n- splice(): Changes the contents of an array by removing or replacing existing elements and/or adding new elements.\n\nExample:\njavascript\nlet numbers = [1, 2, 3, 4, 5];\nnumbers.push(6);  // [1, 2, 3, 4, 5, 6]\nnumbers.pop();    // [1, 2, 3, 4, 5]\nnumbers.unshift(0);  // [0, 1, 2, 3, 4, 5]\nnumbers.shift();     // [1, 2, 3, 4, 5]\nlet sliced = numbers.slice(1, 3);  // [2, 3]\nnumbers.splice(1, 1, 10);  // [1, 10, 3, 4, 5]\n"
+      },
+      {
+        "title": "ES6+ Features",
+        "content": "ECMAScript 2015 (ES6) and later versions introduced many new features:\n\n1. let and const for block-scoped variable declarations.\n\n2. Arrow Functions:\njavascript\nlet add = (a, b) => a + b;\n\n3. Template Literals:\njavascript\nlet name = 'John';\nconsole.log(`Hello, ${name}!`);\n\n4. Destructuring Assignment:\njavascript\nlet [a, b] = [1, 2];\nlet {name, age} = {name: 'John', age: 30};\n\n5. Spread Operator:\njavascript\nlet arr1 = [1, 2, 3];\nlet arr2 = [...arr1, 4, 5];\n\n6. Rest Parameters:\njavascript\nfunction sum(...numbers) {\n&nbsp;&nbsp;&nbsp;&nbsp;return numbers.reduce((a, b) => a + b);\n}\n\n7. Classes:\njavascript\nclass Person {\n&nbsp;&nbsp;&nbsp;&nbsp;constructor(name) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;\n&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;greet() {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hello, my name is ${this.name}`);\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n\n8. Promises and Async/Await for handling asynchronous operations.\n"
+      },
+      {
+        "title": "DOM Manipulation",
+        "content": "The Document Object Model (DOM) is a programming interface for HTML and XML documents:\n\n1. Selecting Elements:\njavascript\nlet element = document.getElementById('myId');\nlet elements = document.getElementsByClassName('myClass');\nlet element = document.querySelector('.myClass');\n\n2. Modifying Elements:\njavascript\nelement.innerHTML = 'New content';\nelement.style.color = 'red';\n\n3. Creating and Appending Elements:\njavascript\nlet newDiv = document.createElement('div');\nnewDiv.textContent = 'Hello, World!';\ndocument.body.appendChild(newDiv);\n\n4. Event Handling:\njavascript\nelement.addEventListener('click', function() {\n&nbsp;&nbsp;&nbsp;&nbsp;console.log('Element clicked!');\n});\n"
+      },
+      {
+        "title": "Asynchronous JavaScript",
+        "content": "JavaScript provides several ways to handle asynchronous operations:\n\n1. Callbacks:\njavascript\nfunction fetchData(callback) {\n&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback('Data');\n&nbsp;&nbsp;&nbsp;&nbsp;}, 1000);\n}\n\nfetchData((data) => {\n&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);\n});\n\n2. Promises:\njavascript\nlet promise = new Promise((resolve, reject) => {\n&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resolve('Data');\n&nbsp;&nbsp;&nbsp;&nbsp;}, 1000);\n});\n\npromise.then((data) => {\n&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);\n});\n\n3. Async/Await (ES8):\njavascript\nasync function fetchData() {\n&nbsp;&nbsp;&nbsp;&nbsp;let response = await fetch('https://api.example.com/data');\n&nbsp;&nbsp;&nbsp;&nbsp;let data = await response.json();\n&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);\n}\n\nfetchData();\n"
+      },
+      {
+        "title": "Error Handling",
+        "content": "JavaScript provides mechanisms for handling and throwing errors:\n\n1. try...catch Statement:\njavascript\ntry {\n&nbsp;&nbsp;&nbsp;&nbsp;// Code that may throw an error\n&nbsp;&nbsp;&nbsp;&nbsp;throw new Error('An error occurred');\n} catch (error) {\n&nbsp;&nbsp;&nbsp;&nbsp;console.error(error.message);\n} finally {\n&nbsp;&nbsp;&nbsp;&nbsp;// Code that will run regardless of whether an error occurred\n}\n\n2. Custom Error Types:\njavascript\nclass CustomError extends Error {\n&nbsp;&nbsp;&nbsp;&nbsp;constructor(message) {\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(message);\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = 'CustomError';\n&nbsp;&nbsp;&nbsp;&nbsp;}\n}\n\ntry {\n&nbsp;&nbsp;&nbsp;&nbsp;throw new CustomError('A custom error occurred');\n} catch (error) {\n&nbsp;&nbsp;&nbsp;&nbsp;console.error(error.name + ': ' + error.message);\n}\n"
+      },
+      {
+        "title": "JavaScript Versions (ES6 and Beyond)",
+        "content": "JavaScript has undergone significant updates, particularly with ECMAScript 6 (ES6/ES2015) and beyond. Key features introduced include:\n\n- let and const for variable declarations.\n- Arrow functions for a more concise syntax.\n- Template literals for embedding expressions in strings using backticks.\n- Destructuring for easier extraction of values from arrays or objects.\n- Modules for splitting code into reusable pieces.\n\nExample of destructuring:\njavascript\nconst [a, b] = [1, 2];\nconsole.log(a); // Output: 1\n"
+      }
+    ]
+
+  },
+
+  "css": {
+    "sections": [
+      {
+        "title": "Introduction to CSS",
+        "content": "Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS controls the layout of multiple web pages all at once. It allows developers to apply styles, such as colors, fonts, and spacing, to web pages, making them visually appealing. It was first introduced in 1996 by the W3C (World Wide Web Consortium) and has become an integral part of modern web design."
+      },
+      {
+        "title": "CSS Syntax",
+        "content": "The basic syntax of CSS consists of a selector and a declaration block. A selector specifies which HTML element(s) the style applies to, while a declaration block contains one or more declarations separated by semicolons.\n\nEach declaration includes a CSS property and a value, separated by a colon. Properties are aspects of the element you want to change (e.g., color, font-size), and values specify the new appearance.\n\nExample:\ncss\np {\n    color: red;\n    font-size: 16px;\n}\n"
+      },
+      {
+        "title": "Selectors",
+        "content": "Selectors are used to select the HTML elements that you want to style. There are various types of selectors:\n\n- Element Selector: Targets all elements of a specified type (e.g., `p`, `h1`).\n- ID Selector: Targets a specific element with a unique ID, prefixed with a `#` (e.g., `#header`).\n- Class Selector: Targets all elements with a specified class, prefixed with a `.` (e.g., `.menu`).\n- Attribute Selector: Targets elements with a specific attribute (e.g., `input[type=\"text\"]`).\n\nExample:\ncss\n#header {\n    background-color: blue;\n}\n.menu {\n    font-size: 18px;\n}\n"
+      },
+      {
+        "title": "Box Model",
+        "content": "In CSS, the box model describes the rectangular boxes that are generated for elements in the document tree and governs how elements are laid out.\n\nIt consists of four parts:\n- Content: The actual content of the box, such as text or an image.\n- Padding: Clears an area around the content inside the element.\n- Border: A border that surrounds the padding (if any) and the content.\n- Margin: Clears an area outside the border, creating space between the element and others.\n\nExample:\ncss\ndiv {\n    padding: 10px;\n    border: 2px solid black;\n    margin: 20px;\n}\n"
+      },
+      {
+        "title": "CSS Positioning",
+        "content": "CSS provides several positioning schemes to define how elements are arranged in the document:\n\n- Static: The default positioning. Elements are positioned according to the normal flow of the document.\n- Relative: Positioned relative to its normal position.\n- Absolute: Positioned relative to its nearest positioned ancestor or the initial containing block.\n- Fixed: Positioned relative to the browser window, and it does not move when scrolling.\n- Sticky: Toggles between relative and fixed, depending on scroll position.\n\nExample:\ncss\ndiv {\n    position: absolute;\n    top: 50px;\n    left: 100px;\n}\n"
+      },
+      {
+        "title": "Flexbox",
+        "content": "CSS Flexbox is a layout model that provides an efficient way to align and distribute space among items in a container, even when their size is unknown. It is particularly useful for creating responsive layouts.\n\nKey properties include:\n- display: flex: Defines a flex container.\n- flex-direction: Specifies the direction of the flex items (row, column, etc.).\n- justify-content: Aligns items horizontally.\n- align-items: Aligns items vertically.\n\nExample:\ncss\n.container {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n}\n"
+      },
+      {
+        "title": "CSS Grid",
+        "content": "CSS Grid is a two-dimensional layout system that allows you to create grid-based layouts, which can arrange items both in rows and columns.\n\nKey properties include:\n- display: grid: Defines a grid container.\n- grid-template-columns: Specifies the number and width of columns.\n- grid-template-rows: Specifies the number and height of rows.\n- gap: Defines the space between grid items.\n\nExample:\ncss\n.container {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 20px;\n}\n"
+      },
+      {
+        "title": "Media Queries",
+        "content": "CSS Media Queries are used to apply different styles to different screen sizes or devices. This makes websites responsive, adjusting their layout based on the device's characteristics (e.g., width, height, orientation).\n\nExample:\ncss\n@media only screen and (max-width: 600px) {\n    body {\n        background-color: lightblue;\n    }\n}\n"
+      },
+      {
+        "title": "CSS Animations",
+        "content": "CSS animations allow elements to transition from one style to another over a certain period of time. Animations are defined using keyframes, which specify the styles at different points in the animation.\n\nExample:\ncss\n@keyframes slide {\n    0% { transform: translateX(0); }\n    100% { transform: translateX(100px); }\n}\n\n.box {\n    animation: slide 2s ease-in-out infinite;\n}\n"
+      }
+    ]
+  },
+
+  "sql": {
+    "sections": [
+      {
+        "title": "Introduction to SQL",
+        "content": "SQL (Structured Query Language) is a standard programming language specifically designed for managing and manipulating relational databases. SQL enables users to create, read, update, and delete (CRUD) data in a database. It is widely used by database administrators, developers, and data analysts. SQL was initially developed at IBM in the 1970s and has since become the industry standard for database management."
+      },
+      {
+        "title": "Basic SQL Syntax",
+        "content": "SQL syntax is composed of commands and keywords used to interact with a database. The most common commands include:\n\n- SELECT: Retrieves data from the database.\n- INSERT: Adds new data into the database.\n- UPDATE: Modifies existing data in the database.\n- DELETE: Removes data from the database.\n- CREATE: Creates a new table or database.\n\nExample:\nsql\nSELECT * FROM Employees WHERE Age > 30;\n"
+      },
+      {
+        "title": "Data Types",
+        "content": "SQL provides various data types to define the kind of data that can be stored in a table's columns. Common data types include:\n\n- INT: Integer data (whole numbers).\n- VARCHAR(size): Variable-length string data.\n- DATE: Date values.\n- FLOAT: Floating-point numbers (decimals).\n- BOOLEAN: TRUE or FALSE values.\n\nExample:\nsql\nCREATE TABLE Students (\n    ID INT,\n    Name VARCHAR(50),\n    Birthdate DATE\n);\n"
+      },
+      {
+        "title": "SQL Joins",
+        "content": "SQL joins are used to combine records from two or more tables in a relational database based on a related column between them. Types of joins include:\n\n- INNER JOIN: Returns records with matching values in both tables.\n- LEFT JOIN: Returns all records from the left table and matching records from the right table.\n- RIGHT JOIN: Returns all records from the right table and matching records from the left table.\n- FULL OUTER JOIN: Returns records when there is a match in either table.\n\nExample:\nsql\nSELECT Orders.OrderID, Customers.CustomerName\nFROM Orders\nINNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;\n"
+      },
+      {
+        "title": "SQL Aggregation Functions",
+        "content": "SQL offers several aggregation functions to perform calculations on data, including:\n\n- COUNT: Returns the number of rows that match a condition.\n- SUM: Returns the sum of a numeric column.\n- AVG: Returns the average value of a numeric column.\n- MIN and MAX: Returns the minimum or maximum value of a column.\n\nExample:\nsql\nSELECT COUNT(*) FROM Orders WHERE OrderDate = '2024-01-01';\n"
+      },
+      {
+        "title": "SQL Constraints",
+        "content": "SQL constraints are rules applied to columns in a table to ensure the integrity and accuracy of the data. Common constraints include:\n\n- NOT NULL: Ensures that a column cannot have a NULL value.\n- UNIQUE: Ensures that all values in a column are different.\n- PRIMARY KEY: Uniquely identifies each record in a table.\n- FOREIGN KEY: Ensures referential integrity between tables.\n- CHECK: Ensures that values in a column satisfy a specific condition.\n\nExample:\nsql\nCREATE TABLE Employees (\n    ID INT PRIMARY KEY,\n    Name VARCHAR(100) NOT NULL,\n    Salary FLOAT CHECK (Salary > 0)\n);\n"
+      },
+      {
+        "title": "Subqueries",
+        "content": "A subquery is a query nested inside another SQL query. Subqueries can be used to return data that will be used in the main query as a condition for filtering results.\n\nExample:\nsql\nSELECT Name\nFROM Employees\nWHERE Salary > (SELECT AVG(Salary) FROM Employees);\n"
+      },
+      {
+        "title": "Transactions",
+        "content": "Transactions in SQL are used to ensure that a series of operations are executed as a single unit. If any operation fails, the entire transaction is rolled back, ensuring data integrity. A transaction has the following properties, known as ACID:\n\n- Atomicity: All operations are completed or none are.\n- Consistency: Ensures that data moves from one valid state to another.\n- Isolation: Transactions are executed independently of others.\n- Durability: Once a transaction is committed, it remains permanent.\n\nExample:\nsql\nBEGIN TRANSACTION;\nUPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;\nUPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;\nCOMMIT;\n"
+      }
+    ]
+  },
+
+  "plsql": {
+    "sections": [
+      {
+        "title": "Introduction to PL/SQL",
+        "content": "PL/SQL (Procedural Language/Structured Query Language) is Oracle's procedural extension for SQL and the Oracle relational database. It is designed to integrate seamlessly with SQL and offers procedural programming capabilities such as loops, conditions, and exception handling. PL/SQL is used to create stored procedures, functions, packages, triggers, and other program units that reside in the database."
+      },
+      {
+        "title": "PL/SQL Block Structure",
+        "content": "A PL/SQL program consists of a block of code. The block is divided into three sections:\n\n1. Declaration: Used to declare variables, cursors, and types.\n2. Execution: Contains the SQL and PL/SQL statements that are executed.\n3. Exception Handling: Handles errors that occur during execution.\n\nExample:\nsql\nDECLARE\n    v_emp_name VARCHAR2(50);\nBEGIN\n    SELECT first_name INTO v_emp_name FROM employees WHERE employee_id = 100;\n    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_emp_name);\nEXCEPTION\n    WHEN NO_DATA_FOUND THEN\n        DBMS_OUTPUT.PUT_LINE('Employee not found.');\nEND;\n"
+      },
+      {
+        "title": "Variables and Data Types",
+        "content": "PL/SQL supports a variety of data types, including numbers, characters, strings, dates, and booleans. Variables can be declared in the declaration section of a block and used throughout the program.\n\nExample:\nsql\nDECLARE\n    v_salary NUMBER(7,2);\n    v_employee_name VARCHAR2(50);\nBEGIN\n    v_salary := 50000;\n    v_employee_name := 'John Doe';\nEND;\n"
+      },
+      {
+        "title": "Control Structures",
+        "content": "PL/SQL provides control structures like conditional statements and loops to control the flow of execution:\n\n- IF-THEN-ELSE: Executes statements based on conditions.\n- LOOPS: Repeats statements until a condition is met.\n- CASE: Similar to IF-THEN-ELSE, but allows for multiple conditions.\n\nExample:\nsql\nBEGIN\n    IF v_salary > 10000 THEN\n        DBMS_OUTPUT.PUT_LINE('High salary');\n    ELSE\n        DBMS_OUTPUT.PUT_LINE('Low salary');\n    END IF;\n\n    FOR i IN 1..10 LOOP\n        DBMS_OUTPUT.PUT_LINE(i);\n    END LOOP;\nEND;\n"
+      },
+      {
+        "title": "Cursors",
+        "content": "Cursors are used in PL/SQL to process query results row by row. There are two types of cursors:\n\n- Implicit Cursor: Automatically created by Oracle for SQL statements that return a single row.\n- Explicit Cursor: Must be explicitly declared for queries that return multiple rows.\n\nExample of an explicit cursor:\nsql\nDECLARE\n    CURSOR emp_cursor IS SELECT employee_id, first_name FROM employees;\n    v_emp_id employees.employee_id%TYPE;\n    v_first_name employees.first_name%TYPE;\nBEGIN\n    OPEN emp_cursor;\n    LOOP\n        FETCH emp_cursor INTO v_emp_id, v_first_name;\n        EXIT WHEN emp_cursor%NOTFOUND;\n        DBMS_OUTPUT.PUT_LINE(v_emp_id || ' ' || v_first_name);\n    END LOOP;\n    CLOSE emp_cursor;\nEND;\n"
+      },
+      {
+        "title": "Stored Procedures and Functions",
+        "content": "Stored procedures and functions are reusable program units that encapsulate business logic. A procedure performs an action, while a function returns a value.\n\n- Procedure Example:\nsql\nCREATE OR REPLACE PROCEDURE update_salary(p_emp_id IN NUMBER, p_new_salary IN NUMBER) IS\nBEGIN\n    UPDATE employees SET salary = p_new_salary WHERE employee_id = p_emp_id;\nEND update_salary;\n/\n\n\n- Function Example:\nsql\nCREATE OR REPLACE FUNCTION get_employee_name(p_emp_id IN NUMBER) RETURN VARCHAR2 IS\n    v_emp_name VARCHAR2(100);\nBEGIN\n    SELECT first_name INTO v_emp_name FROM employees WHERE employee_id = p_emp_id;\n    RETURN v_emp_name;\nEND get_employee_name;\n/\n"
+      },
+      {
+        "title": "Triggers",
+        "content": "Triggers are stored PL/SQL blocks that are automatically executed in response to specific database events such as INSERT, UPDATE, or DELETE. Triggers are useful for maintaining data integrity or enforcing business rules.\n\nExample:\nsql\nCREATE OR REPLACE TRIGGER before_employee_insert\nBEFORE INSERT ON employees\nFOR EACH ROW\nBEGIN\n    :NEW.hire_date := SYSDATE;\nEND;\n/\n"
+      },
+      {
+        "title": "Packages",
+        "content": "Packages are collections of related procedures, functions, and variables grouped together as a single unit. They provide modularity, easier maintenance, and performance improvements.\n\nExample:\nsql\nCREATE OR REPLACE PACKAGE employee_pkg IS\n    PROCEDURE add_employee(p_name IN VARCHAR2, p_salary IN NUMBER);\n    FUNCTION get_employee_count RETURN NUMBER;\nEND employee_pkg;\n/\n\nCREATE OR REPLACE PACKAGE BODY employee_pkg IS\n    PROCEDURE add_employee(p_name IN VARCHAR2, p_salary IN NUMBER) IS\n    BEGIN\n        INSERT INTO employees (first_name, salary) VALUES (p_name, p_salary);\n    END add_employee;\n\n    FUNCTION get_employee_count RETURN NUMBER IS\n        v_count NUMBER;\n    BEGIN\n        SELECT COUNT(*) INTO v_count FROM employees;\n        RETURN v_count;\n    END get_employee_count;\nEND employee_pkg;\n/\n"
+      },
+      {
+        "title": "Exception Handling",
+        "content": "PL/SQL provides a robust exception-handling mechanism to handle runtime errors. You can define custom error-handling routines or use predefined exceptions.\n\nExample:\nsql\nBEGIN\n    SELECT salary INTO v_salary FROM employees WHERE employee_id = 100;\nEXCEPTION\n    WHEN NO_DATA_FOUND THEN\n        DBMS_OUTPUT.PUT_LINE('Employee not found');\n    WHEN OTHERS THEN\n        DBMS_OUTPUT.PUT_LINE('Error occurred: ' || SQLERRM);\nEND;\n"
+      },
+      {
+        "title": "Bulk Collect",
+        "content": "PL/SQL allows for bulk data processing using BULK COLLECT and FORALL. These statements are used to improve performance by reducing the context switch between PL/SQL and SQL.\n\nExample:\nsql\nDECLARE\n    TYPE t_emp_names IS TABLE OF employees.first_name%TYPE;\n    v_emp_names t_emp_names;\nBEGIN\n    SELECT first_name BULK COLLECT INTO v_emp_names FROM employees WHERE department_id = 10;\n    FOR i IN 1..v_emp_names.COUNT LOOP\n        DBMS_OUTPUT.PUT_LINE(v_emp_names(i));\n    END LOOP;\nEND;\n"
+      }
+    ]
+  },
+
+  "aspnet": {
+    "sections": [
+      {
+        "title": "Introduction to ASP.NET",
+        "content": "ASP.NET is an open-source, server-side web application framework developed by Microsoft. It is used to create dynamic web pages and web applications. ASP.NET allows developers to build web-based applications using .NET languages such as C# and VB.NET. ASP.NET is part of the .NET framework and provides a robust set of libraries and APIs for building scalable, secure, and maintainable web applications."
+      },
+      {
+        "title": "ASP.NET Architecture",
+        "content": "ASP.NET follows a multi-tier architecture model, which separates the application into different layers, each responsible for different aspects of the application:\n\n1. Presentation Layer: This layer handles the user interface (UI) and user interaction. It consists of web pages (e.g., ASPX files, Razor views).\n2. Business Logic Layer (BLL): This layer contains the business logic and validation rules of the application.\n3. Data Access Layer (DAL): This layer interacts with the database, handling CRUD operations.\n4. Database: This is the layer where data is stored and retrieved from."
+      },
+      {
+        "title": "ASP.NET Web Forms",
+        "content": "ASP.NET Web Forms is a development model for building web applications with a drag-and-drop, event-driven model. It allows developers to create dynamic web pages using familiar Windows-style controls (e.g., text boxes, buttons).\n\nKey features:\n- Code-behind model: The logic is separated from the HTML.\n- Server-side controls: Provide rich UI elements that are processed on the server.\n- ViewState: Maintains the state of web controls between postbacks.\n\nExample:\naspx\n<asp:Button runat=\"server\" ID=\"btnSubmit\" Text=\"Submit\" OnClick=\"btnSubmit_Click\" />\n"
+      },
+      {
+        "title": "ASP.NET MVC",
+        "content": "ASP.NET MVC is a design pattern that separates an application into three main components:\n\n1. Model: Represents the application's data and business logic.\n2. View: Represents the UI that displays the data.\n3. Controller: Handles user input and updates the Model and View accordingly.\n\nASP.NET MVC provides greater control over HTML, JavaScript, and CSS than Web Forms, making it ideal for developers looking for a lightweight framework.\n\nExample:\ncsharp\npublic class HomeController : Controller {\n    public ActionResult Index() {\n        return View();\n    }\n}\n"
+      },
+      {
+        "title": "ASP.NET Core",
+        "content": "ASP.NET Core is a modern, cross-platform, high-performance framework for building cloud-based and internet-connected applications. It is the successor to the original ASP.NET and is designed to work on Windows, macOS, and Linux.\n\nKey features of ASP.NET Core include:\n- Cross-platform: Runs on Windows, macOS, and Linux.\n- High performance: Optimized for performance and scalability.\n- Modular framework: Developers can add only the necessary libraries to reduce the app's size.\n\nExample:\ncsharp\npublic class Startup {\n    public void Configure(IApplicationBuilder app) {\n        app.UseRouting();\n        app.UseEndpoints(endpoints => {\n            endpoints.MapGet(\"/\", async context => {\n                await context.Response.WriteAsync(\"Hello World!\");\n            });\n        });\n    }\n}\n"
+      },
+      {
+        "title": "Entity Framework",
+        "content": "Entity Framework (EF) is an open-source ORM (Object-Relational Mapping) framework for .NET that simplifies data access by allowing developers to interact with databases using strongly-typed objects rather than writing raw SQL queries. It supports LINQ (Language-Integrated Query) for querying the database in a strongly-typed manner.\n\nExample:\ncsharp\nusing (var context = new SchoolContext()) {\n    var students = context.Students.ToList();\n}\n"
+      },
+      {
+        "title": "Routing in ASP.NET Core",
+        "content": "Routing in ASP.NET Core is the process of mapping incoming HTTP requests to the appropriate controller action. The routing system examines the URL and determines which controller and action should handle the request.\n\nExample:\ncsharp\napp.UseEndpoints(endpoints => {\n    endpoints.MapControllerRoute(\n        name: \"default\",\n        pattern: \"{controller=Home}/{action=Index}/{id?}\");\n});\n"
+      },
+      {
+        "title": "Middleware",
+        "content": "Middleware in ASP.NET Core is software that is executed on every HTTP request. It handles requests and responses in the application pipeline. Examples of middleware include authentication, logging, and error handling.\n\nExample:\ncsharp\npublic void Configure(IApplicationBuilder app) {\n    app.Use(async (context, next) => {\n        await context.Response.WriteAsync(\"Request handled by middleware.\");\n        await next.Invoke();\n    });\n}\n"
+      }
+    ]
+  },
+
+  "c": {
+    "sections": [
+      {
+        "title": "Introduction to C Language",
+        "content": "C is a general-purpose, procedural programming language developed in 1972 by Dennis Ritchie at Bell Labs. It has been widely used for developing system software like operating systems, as well as various application programs. C provides a balance between low-level memory access and high-level language features, making it a foundational language in computer science."
+      },
+      {
+        "title": "Structure of a C Program",
+        "content": "A typical C program consists of the following parts:\n- Preprocessor Directives: Commands for the preprocessor (e.g., `#include`, `#define`).\n- main() Function: Entry point for program execution.\n- Variable Declarations: Declare variables used in the program.\n- Statements and Expressions: Perform operations and computations.\n- Return Statement: End the program with a return value.\n\nExample:\nc\n#include <stdio.h>\nint main() {\n    &nbspprintf(\"Hello, World!\");\n&nbspreturn 0;\n}\n"
+      },
+      {
+        "title": "Data Types in C",
+        "content": "C provides various data types to represent different kinds of data:\n- int: Represents integers (e.g., `int a = 5;`).\n- float: Represents floating-point numbers (e.g., `float b = 3.14;`).\n- double: Represents double-precision floating-point numbers.\n- char: Represents single characters (e.g., `char c = 'A';`).\n- void: Represents absence of a data type, often used in functions that do not return a value.\n\nModifiers such as `short`, `long`, `signed`, and `unsigned` can alter the size and range of data types."
+      },
+      {
+        "title": "Variables and Constants",
+        "content": "Variables are used to store data that can be modified during program execution. They are declared with a specific data type.\n\nExample:\nc\nint age = 25;\nfloat pi = 3.1415;\n\n\nConstants are fixed values that cannot be changed during execution. Constants are defined using the `const` keyword or `#define` preprocessor directive.\n\nExample:\nc\nconst int MAX_SIZE = 100;\n#define PI 3.14\n"
+      },
+      {
+        "title": "Operators in C",
+        "content": "C supports a wide range of operators for performing operations on variables and data:\n- Arithmetic Operators: `+`, `-`, ``, `/`, `%` (addition, subtraction, multiplication, division, modulus).\n- Relational Operators: `==`, `!=`, `>`, `<`, `>=`, `<=` (comparison between values).\n- Logical Operators: `&&`, `||`, `!` (logical AND, OR, NOT).\n- Bitwise Operators: `&`, `|`, `^`, `~`, `<<`, `>>` (bit-level operations).\n- Assignment Operators: `=`, `+=`, `-=`, `=`, `/=` (assign values or perform operations during assignment).\n- Increment/Decrement Operators: `++`, `--` (increase or decrease the value of a variable by 1).\n- Conditional (Ternary) Operator: `? :` (shorthand for if-else statements)."
+      },
+      {
+        "title": "Control Structures",
+        "content": "C offers several control structures for decision-making and looping:\n\n- if-else: Conditional statements that execute code based on a condition.\nExample:\nc\nif (a > b) {\n    printf(\"a is greater than b\");\n} else {\n    printf(\"b is greater than or equal to a\");\n}\n\n\n- switch-case: Allows the selection of one among many options based on the value of a variable.\nExample:\nc\nswitch (grade) {\n    case 'A':\n        printf(\"Excellent!\");\n        break;\n    case 'B':\n        printf(\"Good\");\n        break;\n    default:\n        printf(\"Invalid grade\");\n}\n\n\n- Loops: Repeatedly execute a block of code while a condition is true.\n  - `for` loop:\n  c\n  for (int i = 0; i < 10; i++) {\n      printf(\"%d\\n\", i);\n  }\n  \n  - `while` loop:\n  c\n  while (x > 0) {\n      x--;\n  }\n  \n  - `do-while` loop (guarantees at least one execution):\n  c\n  do {\n      x--;\n  } while (x > 0);\n  "
+      },
+      {
+        "title": "Functions in C",
+        "content": "Functions in C help modularize the code by allowing you to define reusable blocks of code.\n\nSyntax:\nc\nreturn_type function_name(parameters) {\n    // function body\n    return value;\n}\n\n\nExample:\nc\nint add(int a, int b) {\n    return a + b;\n}\n\n\nFunctions can also have void as a return type if they don't return any value. C supports function prototypes, which provide the function signature before its definition."
+      },
+      {
+        "title": "Pointers",
+        "content": "Pointers are variables that store the memory address of another variable. They provide powerful capabilities for memory manipulation and are essential for dynamic memory allocation, arrays, and function arguments.\n\nSyntax:\nc\nint ptr;\n\n\nExample:\nc\nint a = 10;\nint ptr = &a;\nprintf(\"Address of a: %p\", ptr);\n\n\n- `ptr` dereferences the pointer, giving the value stored at the memory address.\n- `&var` gives the address of the variable."
+      },
+      {
+        "title": "Arrays in C",
+        "content": "An array is a collection of elements of the same type, stored in contiguous memory locations.\n\nSyntax:\nc\ndata_type array_name[size];\n\n\nExample:\nc\nint numbers[5] = {1, 2, 3, 4, 5};\n\n\nArrays are zero-indexed, meaning the first element has an index of 0. C supports multidimensional arrays as well."
+      },
+      {
+        "title": "Strings in C",
+        "content": "Strings are arrays of characters in C, and they are terminated with a null character (`\\0`).\n\nExample:\nc\nchar str[] = \"Hello, C!\";\n\n\nC provides the standard library `string.h` for common string functions such as `strlen()`, `strcpy()`, and `strcmp()`."
+      },
+      {
+        "title": "Structures and Unions",
+        "content": "Structures allow grouping variables of different data types under a single name.\n\nSyntax:\nc\nstruct Person {\n    char name[50];\n    int age;\n};\n\n\n- Unions are similar to structures but store only one field at a time.\n\nSyntax:\nc\nunion Data {\n    int i;\n    float f;\n};\n\n\nUnions provide memory efficiency since all members share the same memory location."
+      },
+      {
+        "title": "Dynamic Memory Allocation",
+        "content": "C provides functions from `stdlib.h` to allocate and manage memory dynamically during runtime:\n\n- `malloc()`: Allocates a block of memory.\n- `calloc()`: Allocates memory for an array of elements.\n- `free()`: Frees previously allocated memory.\n- `realloc()`: Reallocates memory to a different size.\n\nExample:\nc\nint ptr = (int) malloc(5  sizeof(int));\nif (ptr == NULL) {\n    printf(\"Memory not allocated.\");\n} else {\n    // Memory successfully allocated\n    free(ptr);\n}\n"
+      },
+      {
+        "title": "File Handling in C",
+        "content": "C provides functions to work with files, allowing data to be read from or written to files.\n\n- `fopen()`: Open a file.\n- `fclose()`: Close a file.\n- `fread()`: Read data from a file.\n- `fwrite()`: Write data to a file.\n- `fprintf()`: Write formatted output to a file.\n- `fscanf()`: Read formatted input from a file.\n\nExample:\nc\nFILE fp = fopen(\"file.txt\", \"w\");\nif (fp != NULL) {\n    fprintf(fp, \"Hello, file!\");\n    fclose(fp);\n}\n"
+      }
+    ]
+  },
+
+  "html": {
+    "sections": [
+      {
+        "title": "Introduction to HTML",
+        "content": "HTML (Hypertext Markup Language) is the standard markup language for creating web pages and web applications. It is the backbone of most websites, defining the structure of content on the internet and allowing for multimedia and text to be arranged within a browser. HTML consists of various 'tags' that provide instructions to the browser on how to display elements. HTML documents usually end with the .html or .htm extension."
+      },
+      {
+        "title": "Basic Syntax",
+        "content": "HTML syntax is based on a series of tags that enclose content. Tags are written inside angle brackets (e.g., &lt;tagname&gt;), with a corresponding closing tag (e.g., &lt;/tagname&gt;). Each HTML document begins with a declaration &lt;!DOCTYPE html&gt; to inform the browser of the document type. The primary sections in an HTML document include the &lt;html&gt;, &lt;head&gt;, and &lt;body&gt; tags."
+      },
+      {
+        "title": "HTML Structure",
+        "content": "HTML documents follow a specific structure:\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &nbsp&lt;head&gt;\n   &nbsp&nbsp &lt;title&gt;Document Title&lt;/title&gt;\n  &nbsp&lt;/head&gt;\n &nbsp&lt;body&gt;\n    &nbsp&nbspContent goes here\n  &nbsp&lt;/body&gt;\n&lt;/html&gt;\n\nIn this structure:\n- &lt;!DOCTYPE html&gt;: This tag specifies the document type.\n- &lt;html&gt;: The root element of the document.\n- &lt;head&gt;: Contains meta information, the document title, and links to stylesheets or scripts.\n- &lt;body&gt;: Encloses the visible page content, such as text, images, and other media."
+      },
+      {
+        "title": "HTML Tags and Elements",
+        "content": "HTML consists of various tags used to format content:\n\n- &lt;h1&gt; to &lt;h6&gt;: Header tags, where &lt;h1&gt; is the largest header.\n- &lt;p&gt;: Defines a paragraph.\n- &lt;a href='URL'&gt;: Creates a hyperlink.\n- &lt;img src='URL' alt='description'&gt;: Adds an image.\n\nExample:\n&lt;p&gt;This is a paragraph.&lt;/p&gt;\n\nThe content is enclosed within the tags, making it easy to nest and organize."
+      },
+      {
+        "title": "Attributes in HTML",
+        "content": "HTML tags often include attributes, which provide additional information about elements. Attributes are added within the opening tag and consist of a name and value, separated by an equal sign. Common attributes:\n\n- &lt;a href='https://example.com'&gt;: 'href' specifies the link URL.\n- &lt;img src='image.jpg' alt='Description'&gt;: 'src' provides the image URL, 'alt' offers a text description.\n\nAttributes allow for added functionality and customization within tags."
+      },
+      {
+        "title": "HTML Forms",
+        "content": "Forms collect user data. A basic form example:\n&lt;form action='/submit' method='POST'&gt;\n  &lt;label&gt;Name: &lt;/label&gt;\n  &lt;input type='text' name='username'&gt;\n  &lt;input type='submit' value='Submit'&gt;\n&lt;/form&gt;\n\nForm tags include:\n- &lt;form&gt;: The container for form elements, specifying 'action' and 'method'.\n- &lt;input&gt;: Creates user inputs. Common types: 'text', 'submit', 'email'.\n- &lt;label&gt;: Labels form inputs for accessibility."
+      },
+      {
+        "title": "HTML Tables",
+        "content": "Tables display data in a grid format. Example:\n&lt;table&gt;\n  &lt;tr&gt;\n    &lt;th&gt;Header 1&lt;/th&gt;\n    &lt;th&gt;Header 2&lt;/th&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;Data 1&lt;/td&gt;\n    &lt;td&gt;Data 2&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;\n\nKey tags:\n- &lt;table&gt;: Starts the table.\n- &lt;tr&gt;: Creates rows.\n- &lt;th&gt;: Header cells.\n- &lt;td&gt;: Regular cells."
+      },
+      {
+        "title": "HTML Lists",
+        "content": "HTML supports ordered and unordered lists.\n- Unordered lists (&lt;ul&gt;) use bullet points.\n- Ordered lists (&lt;ol&gt;) use numbers.\n\nExample:\n&lt;ul&gt;\n  &lt;li&gt;Item 1&lt;/li&gt;\n  &lt;li&gt;Item 2&lt;/li&gt;\n&lt;/ul&gt;\n\nThis allows structured, organized lists of items on the page."
+      },
+      {
+        "title": "Multimedia in HTML",
+        "content": "Multimedia elements like images, audio, and video enhance webpages:\n\n- &lt;img src='image.jpg'&gt;: Displays images.\n- &lt;audio controls&gt;: Adds audio with play controls.\n- &lt;video controls&gt;: Embeds videos.\n\nExample:\n&lt;video src='movie.mp4' controls&gt;&lt;/video&gt;\n\nMultimedia allows for a richer user experience by incorporating media files directly into the HTML."
+      },
+      {
+        "title": "Semantic HTML",
+        "content": "Semantic HTML uses tags that provide meaning to the content. Examples include:\n- &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, &lt;section&gt;: These tags improve accessibility and SEO by identifying content types.\n\nExample:\n&lt;article&gt;\n  &lt;header&gt;\n    &lt;h1&gt;Article Title&lt;/h1&gt;\n  &lt;/header&gt;\n  &lt;p&gt;Content of the article.&lt;/p&gt;\n&lt;/article&gt;"
+      },
+      {
+        "title": "HTML Best Practices",
+        "content": "Best practices for writing clean and efficient HTML:\n\n1. Use semantic tags for meaning.\n2. Close all tags properly.\n3. Indent nested elements.\n4. Use alt attributes in images for accessibility.\n\nExample:\n&lt;img src='image.jpg' alt='Description'&gt;\n\nFollowing best practices ensures code clarity, accessibility, and SEO benefits."
+      }
+    ]
+  }
+}
+
+
+
+
+
